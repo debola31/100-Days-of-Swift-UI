@@ -53,6 +53,7 @@ struct ContentView: View {
                 
                 Section {
                     Text(grandTotal, format: currencyFormat)
+                        .foregroundColor(tipPercent == 0 ? .red : .none)
                 } header: {
                     Text("Grand Total")
                 }

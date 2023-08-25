@@ -6,46 +6,73 @@
 //
 //
 
-import Foundation
 import CoreData
+import Foundation
 
-
-extension CachedUser {
-
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<CachedUser> {
+public extension CachedUser {
+    @nonobjc class func fetchRequest() -> NSFetchRequest<CachedUser> {
         return NSFetchRequest<CachedUser>(entityName: "CachedUser")
     }
 
-    @NSManaged public var about: String?
-    @NSManaged public var address: String?
-    @NSManaged public var age: Int16
-    @NSManaged public var email: String?
-    @NSManaged public var isActive: Bool
-    @NSManaged public var name: String?
-    @NSManaged public var registered: Date?
-    @NSManaged public var tags: String?
-    @NSManaged public var id: UUID?
-    @NSManaged public var friends: NSSet?
+    @NSManaged var about: String?
+    @NSManaged var address: String?
+    @NSManaged var age: Int16
+    @NSManaged var email: String?
+    @NSManaged var isActive: Bool
+    @NSManaged var name: String?
+    @NSManaged var registered: Date?
+    @NSManaged var tags: String?
+    @NSManaged var id: UUID?
+    @NSManaged var friends: NSSet?
 
+    var wrappedId: UUID {
+        id ?? UUID()
+    }
+
+    var wrappedName: String {
+        name ?? "Unknown"
+    }
+
+    var wrappedEmail: String {
+        email ?? "Unknown"
+    }
+
+    var wrappedAddress: String {
+        address ?? "Unknown"
+    }
+
+    var wrappedAbout: String {
+        about ?? "Unknown"
+    }
+
+    var wrappedRegistered: Date {
+        registered ?? Date.now
+    }
+
+    var wrappedTags: String {
+        tags ?? ""
+    }
+
+    var wrappedFriends: [CachedFriend] {
+        let set = friends as? Set<CachedFriend> ?? []
+        return set.sorted { $0.wrappedName < $1.wrappedName }
+    }
 }
 
 // MARK: Generated accessors for friends
-extension CachedUser {
 
+public extension CachedUser {
     @objc(addFriendsObject:)
-    @NSManaged public func addToFriends(_ value: CachedFriend)
+    @NSManaged func addToFriends(_ value: CachedFriend)
 
     @objc(removeFriendsObject:)
-    @NSManaged public func removeFromFriends(_ value: CachedFriend)
+    @NSManaged func removeFromFriends(_ value: CachedFriend)
 
     @objc(addFriends:)
-    @NSManaged public func addToFriends(_ values: NSSet)
+    @NSManaged func addToFriends(_ values: NSSet)
 
     @objc(removeFriends:)
-    @NSManaged public func removeFromFriends(_ values: NSSet)
-
+    @NSManaged func removeFromFriends(_ values: NSSet)
 }
 
-extension CachedUser : Identifiable {
-
-}
+extension CachedUser: Identifiable {}

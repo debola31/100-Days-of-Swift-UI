@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		300FDFA92A993EA5009F1773 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300FDFA82A993EA5009F1773 /* DataController.swift */; };
+		300FDFBA2A995319009F1773 /* CachedUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300FDFB62A995319009F1773 /* CachedUser+CoreDataClass.swift */; };
+		300FDFBB2A995319009F1773 /* CachedUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300FDFB72A995319009F1773 /* CachedUser+CoreDataProperties.swift */; };
+		300FDFBC2A995319009F1773 /* CachedFriend+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300FDFB82A995319009F1773 /* CachedFriend+CoreDataClass.swift */; };
+		300FDFBD2A995319009F1773 /* CachedFriend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300FDFB92A995319009F1773 /* CachedFriend+CoreDataProperties.swift */; };
+		30CF154E2A968845006C99F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CF154D2A968845006C99F7 /* User.swift */; };
+		30CF15502A968F93006C99F7 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CF154F2A968F93006C99F7 /* DetailView.swift */; };
+		30CF15562A979A5C006C99F7 /* FriendFace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30CF15542A979A5C006C99F7 /* FriendFace.xcdatamodeld */; };
 		30F1DF2B2A961CFE009DADAF /* FriendFaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F1DF2A2A961CFE009DADAF /* FriendFaceApp.swift */; };
 		30F1DF2D2A961CFE009DADAF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F1DF2C2A961CFE009DADAF /* ContentView.swift */; };
 		30F1DF2F2A961CFF009DADAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30F1DF2E2A961CFF009DADAF /* Assets.xcassets */; };
@@ -14,6 +22,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		300FDFA82A993EA5009F1773 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		300FDFB62A995319009F1773 /* CachedUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedUser+CoreDataClass.swift"; sourceTree = "<group>"; };
+		300FDFB72A995319009F1773 /* CachedUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		300FDFB82A995319009F1773 /* CachedFriend+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedFriend+CoreDataClass.swift"; sourceTree = "<group>"; };
+		300FDFB92A995319009F1773 /* CachedFriend+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedFriend+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		30CF154D2A968845006C99F7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		30CF154F2A968F93006C99F7 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		30CF15552A979A5C006C99F7 /* FriendFace.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FriendFace.xcdatamodel; sourceTree = "<group>"; };
 		30F1DF272A961CFE009DADAF /* FriendFace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendFace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30F1DF2A2A961CFE009DADAF /* FriendFaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendFaceApp.swift; sourceTree = "<group>"; };
 		30F1DF2C2A961CFE009DADAF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,8 +67,16 @@
 		30F1DF292A961CFE009DADAF /* FriendFace */ = {
 			isa = PBXGroup;
 			children = (
+				300FDFB62A995319009F1773 /* CachedUser+CoreDataClass.swift */,
+				300FDFB72A995319009F1773 /* CachedUser+CoreDataProperties.swift */,
+				300FDFB82A995319009F1773 /* CachedFriend+CoreDataClass.swift */,
+				300FDFB92A995319009F1773 /* CachedFriend+CoreDataProperties.swift */,
 				30F1DF2A2A961CFE009DADAF /* FriendFaceApp.swift */,
 				30F1DF2C2A961CFE009DADAF /* ContentView.swift */,
+				300FDFA82A993EA5009F1773 /* DataController.swift */,
+				30CF154F2A968F93006C99F7 /* DetailView.swift */,
+				30CF15542A979A5C006C99F7 /* FriendFace.xcdatamodeld */,
+				30CF154D2A968845006C99F7 /* User.swift */,
 				30F1DF2E2A961CFF009DADAF /* Assets.xcassets */,
 				30F1DF302A961CFF009DADAF /* Preview Content */,
 			);
@@ -137,8 +161,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				300FDFBC2A995319009F1773 /* CachedFriend+CoreDataClass.swift in Sources */,
+				300FDFBD2A995319009F1773 /* CachedFriend+CoreDataProperties.swift in Sources */,
+				300FDFBB2A995319009F1773 /* CachedUser+CoreDataProperties.swift in Sources */,
 				30F1DF2D2A961CFE009DADAF /* ContentView.swift in Sources */,
+				30CF15502A968F93006C99F7 /* DetailView.swift in Sources */,
 				30F1DF2B2A961CFE009DADAF /* FriendFaceApp.swift in Sources */,
+				300FDFA92A993EA5009F1773 /* DataController.swift in Sources */,
+				30CF15562A979A5C006C99F7 /* FriendFace.xcdatamodeld in Sources */,
+				300FDFBA2A995319009F1773 /* CachedUser+CoreDataClass.swift in Sources */,
+				30CF154E2A968845006C99F7 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +371,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		30CF15542A979A5C006C99F7 /* FriendFace.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				30CF15552A979A5C006C99F7 /* FriendFace.xcdatamodel */,
+			);
+			currentVersion = 30CF15552A979A5C006C99F7 /* FriendFace.xcdatamodel */;
+			path = FriendFace.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 30F1DF1F2A961CFE009DADAF /* Project object */;
 }

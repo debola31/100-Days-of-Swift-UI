@@ -6,39 +6,46 @@
 //
 //
 
-import Foundation
 import CoreData
+import Foundation
 
-
-extension CachedFriend {
-
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<CachedFriend> {
+public extension CachedFriend {
+    @nonobjc class func fetchRequest() -> NSFetchRequest<CachedFriend> {
         return NSFetchRequest<CachedFriend>(entityName: "CachedFriend")
     }
 
-    @NSManaged public var name: String?
-    @NSManaged public var id: UUID?
-    @NSManaged public var users: NSSet?
+    @NSManaged var name: String?
+    @NSManaged var id: UUID?
+    @NSManaged var users: NSSet?
 
+    var wrappedId: UUID {
+        id ?? UUID()
+    }
+
+    var wrappedName: String {
+        name ?? "Unknown"
+    }
+
+    var wrappedUsers: [CachedUser] {
+        let set = users as? Set<CachedUser> ?? []
+        return set.sorted { $0.wrappedName < $1.wrappedName }
+    }
 }
 
 // MARK: Generated accessors for users
-extension CachedFriend {
 
+public extension CachedFriend {
     @objc(addUsersObject:)
-    @NSManaged public func addToUsers(_ value: CachedUser)
+    @NSManaged func addToUsers(_ value: CachedUser)
 
     @objc(removeUsersObject:)
-    @NSManaged public func removeFromUsers(_ value: CachedUser)
+    @NSManaged func removeFromUsers(_ value: CachedUser)
 
     @objc(addUsers:)
-    @NSManaged public func addToUsers(_ values: NSSet)
+    @NSManaged func addToUsers(_ values: NSSet)
 
     @objc(removeUsers:)
-    @NSManaged public func removeFromUsers(_ values: NSSet)
-
+    @NSManaged func removeFromUsers(_ values: NSSet)
 }
 
-extension CachedFriend : Identifiable {
-
-}
+extension CachedFriend: Identifiable {}

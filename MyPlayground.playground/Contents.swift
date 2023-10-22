@@ -2,12 +2,10 @@ import UIKit
 
 var greeting = "Hello, playground"
 
-enum Predicates : String {
-    case beginsWith = "BEGINSWITH"
-    case like
-    case lessThan = "<"
-    case greaterThan = ">"
-    
+var chest = [Int]()
+for i in 1 ... 7 {
+    chest.append(i)
 }
 
-print("\(Predicates.like.rawValue)")
+print(chest)
+print([Int](repeating: Int.random(in: 1..6), count: 5))
